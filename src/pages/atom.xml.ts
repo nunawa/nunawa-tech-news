@@ -30,7 +30,7 @@ export const GET: APIRoute = async () => {
 		// 10件を取得
 		const articles = feed.articles.slice(0, 10);
 
-		const siteUrl = "https://news.nunawa.com";
+		const siteUrl = "https://news.nunawa.net";
 		const title = "Nunawa Tech News";
 		const description = "海外テック記事の日本語サマリを配信するニュースサイト";
 
@@ -68,7 +68,7 @@ export const GET: APIRoute = async () => {
 				<subtitle>${escapeXml(description)}</subtitle>
 				<link rel="self" type="application/atom+xml" href="${siteUrl}/atom.xml" />
 				<link rel="alternate" href="${siteUrl}" />
-				<id>tag:news.nunawa.com,2025-12:/atom.xml</id>
+				<id>tag:news.nunawa.net,2025-12:/atom.xml</id>
 				<updated>${latestPubDate}</updated>
 				${rssItems}
 			</feed>

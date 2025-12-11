@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://news.nunawa.com',
+	site: 'https://news.nunawa.net',
 	vite: {
 		// @ts-expect-error
 		plugins: [tailwindcss()],
