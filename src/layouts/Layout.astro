@@ -1,0 +1,84 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const siteTitle = "Nunawa Tech News";
+const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=true" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    <!-- Atom Feed -->
+    <link
+      href="/atom.xml"
+      type="application/atom+xml"
+      rel="alternate"
+      title={siteTitle}
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={siteTitle} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="bg-neutral-950 text-neutral-100 min-h-screen">
+    <header class="border-b border-neutral-800 bg-neutral-900">
+      <nav
+        class="container mx-auto px-4 py-4 flex items-center justify-between max-w-4xl"
+      >
+        <a
+          href="/"
+          class="text-xl font-bold text-neutral-300 hover:text-white transition-colors"
+        >
+          {siteTitle}
+        </a>
+        <div class="flex gap-6">
+          <a
+            href="/"
+            class="text-neutral-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded px-2 py-1"
+          >
+            ホーム
+          </a>
+          <a
+            href="/rss.xml"
+            class="text-neutral-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded px-2 py-1"
+          >
+            RSS
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+      <slot />
+    </main>
+
+    <footer class="border-t border-neutral-800 mt-16">
+      <div
+        class="container mx-auto px-4 py-6 text-center text-neutral-500 text-sm max-w-4xl"
+      >
+        <p>海外テック記事の日本語サマリを配信</p>
+      </div>
+    </footer>
+  </body>
+</html>
