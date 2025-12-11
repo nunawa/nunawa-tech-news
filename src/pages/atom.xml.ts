@@ -66,7 +66,7 @@ export const GET: APIRoute = async () => {
 			<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
 				<title>${escapeXml(title)}</title>
 				<subtitle>${escapeXml(description)}</subtitle>
-				<link rel="self" type="application/atom+xml" href="${siteUrl}/rss.xml" />
+				<link rel="self" type="application/atom+xml" href="${siteUrl}/atom.xml" />
 				<link rel="alternate" href="${siteUrl}" />
 				<id>tag:news.nunawa.com,2025-12:/atom.xml</id>
 				<updated>${latestPubDate}</updated>
