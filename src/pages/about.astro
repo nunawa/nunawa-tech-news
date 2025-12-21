@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About" description="Nunawa Tech Newsについて">
+  <h1 class="text-3xl font-bold mb-8 text-neutral-300">About</h1>
+
+  <div class="space-y-6">
+    <section
+      class="bg-neutral-900 border border-neutral-800 rounded-lg p-6 hover:border-neutral-700 transition-colors"
+    >
+      <h2 class="text-2xl font-semibold mb-4 text-neutral-200">
+        サイトについて
+      </h2>
+      <div class="space-y-4 text-neutral-300 leading-relaxed">
+        <p>
+          このサイトは、海外のテクノロジー関連記事の日本語サマリを配信するニュースサイトです。
+          ソフトウェアエンジニアにとって有益な記事をAIが自動で選定・翻訳・要約し、配信しています。
+        </p>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-2 text-neutral-200">仕組み</h3>
+          <ol class="list-decimal list-inside space-y-2 ml-2">
+            <li>毎日、複数のRSSフィードから海外のテック記事を収集</li>
+            <li>3日ごとに、AIが10記事を選定し日本語に翻訳・要約</li>
+            <li>静的サイトとして生成し、Cloudflare Workersで配信</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-neutral-900 border border-neutral-800 rounded-lg p-6 hover:border-neutral-700 transition-colors"
+    >
+      <h2 class="text-2xl font-semibold mb-4 text-neutral-200">免責事項</h2>
+      <div class="space-y-3 text-neutral-300 leading-relaxed">
+        <p>
+          本サイトで提供される記事の翻訳および要約は、LLM（大規模言語モデル）によって自動生成されています。LLMの性質上、完全な正確性を保証することはできません。
+        </p>
+        <p>
+          記事の内容について詳細を確認したい場合や、正確な情報が必要な場合は、必ず元記事をご参照ください。
+        </p>
+        <p>
+          リンク先の外部サイトの内容については、各サイトの運営者が責任を負うものとし、本サイトは一切の責任を負いません。
+        </p>
+        <p>
+          本サービスの継続性や可用性について保証するものではありません。予告なくサービスを変更または終了する場合があります。
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="bg-neutral-900 border border-neutral-800 rounded-lg p-6 hover:border-neutral-700 transition-colors"
+    >
+      <h2 class="text-2xl font-semibold mb-4 text-neutral-200">制作者</h2>
+      <div class="text-neutral-300 leading-relaxed">
+        <p>
+          <a
+            href="https://www.nunawa.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded"
+          >
+            nunawa
+          </a>
+        </p>
+      </div>
+    </section>
+  </div>
+</Layout>
