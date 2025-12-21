@@ -53,6 +53,19 @@ function extractDomain(url: string): string {
     return "";
   }
 }
+
+/**
+ * 次回配信予定日を計算（3日後）
+ */
+function getNextDeliveryDate(baseDate: Date): Date {
+  const nextDate = new Date(baseDate);
+  nextDate.setDate(nextDate.getDate() + 3);
+  return nextDate;
+}
+
+const nextDeliveryDate = uploadedAt
+  ? getNextDeliveryDate(uploadedAt)
+  : getNextDeliveryDate(new Date());
 ---
 
 <Layout description="海外テック記事の日本語サマリを配信するニュースサイト">
@@ -106,4 +119,8 @@ function extractDomain(url: string): string {
       </div>
     )
   }
+
+  <div class="mt-12 text-center text-neutral-400">
+    次回配信予定: {formatDateJST(nextDeliveryDate, true)}
+  </div>
 </Layout>
