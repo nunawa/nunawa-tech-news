@@ -6,7 +6,7 @@ This project will build a news site that delivers Japanese summaries of overseas
 
 First, we will use n8n, an open-source workflow automation tool, to periodically run an automated process for collecting, selecting, and summarizing tech articles. Every day, articles will be fetched from designated RSS feeds, checked for duplicates against already saved content, and then stored in a vector database. Every three days, based on several designated topics, relevant articles will be retrieved from the vector database and fed into an LLM. The LLM will select 10 articles per topic that are relevant and beneficial to software engineers, translate their titles, create summaries, and save them as a JSON file in a specified format to an AWS S3-compatible object storage.
 
-For this project, we will use the saved JSON file to generate web pages and an RSS feed with Astro, a static site generator, and distribute them via Cloudflare Workers. The web pages will be designed using Tailwind CSS. The RSS feed will be delivered in Atom format.
+For this project, we will use the saved JSON file to generate web pages and an RSS feed with Astro, a static site generator, and distribute them via Cloudflare Pages. The web pages will be designed using Tailwind CSS. The RSS feed will be delivered in Atom format.
 
 ## Directory Structure
 
@@ -27,7 +27,7 @@ For this project, we will use the saved JSON file to generate web pages and an R
 - Tailwind CSS
 - Zod
 - @aws-sdk/client-s3
-- Cloudflare Workers & R2
+- Cloudflare Pages & R2
 
 ## Available Commands
 
