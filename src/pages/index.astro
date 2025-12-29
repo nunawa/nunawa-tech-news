@@ -95,14 +95,12 @@ const nextDeliveryDate = uploadedAt
               </a>
             </h2>
 
-            <time
-              datetime={article.publishDate.toISOString()}
-              class="text-sm text-neutral-500 block mb-3"
-            >
-              {extractDomain(article.link)}
-              {extractDomain(article.link) && " · "}
-              {formatDateJST(article.publishDate)}
-            </time>
+            <p class="text-sm text-neutral-500 mb-3">
+              {`${extractDomain(article.link)} · `}
+              <time datetime={article.publishDate.toISOString()}>
+                {formatDateJST(article.publishDate)}
+              </time>
+            </p>
 
             <p class="text-neutral-300 leading-relaxed">{article.content}</p>
 
