@@ -41,33 +41,33 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
   </head>
-  <body class="bg-neutral-950 text-neutral-100 min-h-screen">
+  <body class="min-h-screen bg-neutral-950 text-neutral-100">
     <header class="border-b border-neutral-800 bg-neutral-900">
       <nav
-        class="container mx-auto px-4 py-4 flex items-center justify-between max-w-4xl"
+        class="container mx-auto flex max-w-4xl items-center justify-between px-4 py-4"
       >
         <a
           href="/"
-          class="text-xl font-bold text-neutral-300 hover:text-white transition-colors"
+          class="text-xl font-bold text-neutral-300 transition-colors hover:text-white"
         >
           {siteTitle}
         </a>
         <div class="flex gap-2 sm:gap-6">
           <a
             href="/"
-            class="text-neutral-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded px-2 py-1"
+            class="rounded px-2 py-1 text-neutral-300 transition-colors hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
           >
             Home
           </a>
           <a
             href="/about"
-            class="text-neutral-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded px-2 py-1"
+            class="rounded px-2 py-1 text-neutral-300 transition-colors hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
           >
             About
           </a>
           <a
             href="/atom.xml"
-            class="text-neutral-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded px-2 py-1"
+            class="rounded px-2 py-1 text-neutral-300 transition-colors hover:text-white focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
           >
             RSS
           </a>
@@ -75,7 +75,7 @@ const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
       </nav>
     </header>
 
-    <main class="container mx-auto mb-16 px-4 py-8 max-w-4xl">
+    <main class="container mx-auto mb-16 max-w-4xl px-4 py-8">
       <slot />
     </main>
   </body>

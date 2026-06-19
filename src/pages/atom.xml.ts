@@ -6,43 +6,43 @@ import type { Article } from "../lib/schema";
  * XML特殊文字のエスケープ
  */
 function escapeXml(unsafe: string) {
-	return unsafe
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/"/g, "&quot;")
-		.replace(/'/g, "&apos;");
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }
 
 /**
  * Atom Feed用のID生成
  */
 function generateArticleId(article: Article): string {
-	const hostname = new URL(article.link).hostname;
-	const date = new Date(article.publishDate).toLocaleDateString("sv-SE");
-	const path = new URL(article.link).pathname;
-	return `tag:${hostname},${date}:${path}`;
+  const hostname = new URL(article.link).hostname;
+  const date = new Date(article.publishDate).toLocaleDateString("sv-SE");
+  const path = new URL(article.link).pathname;
+  return `tag:${hostname},${date}:${path}`;
 }
 
 export const GET: APIRoute = async () => {
-	try {
-		const feed = await fetchFeed();
-		// 10件を取得
-		const articles = feed.articles.slice(0, 10);
+  try {
+    const feed = await fetchFeed();
+    // 10件を取得
+    const articles = feed.articles.slice(0, 10);
 
-		const siteUrl = "https://news.nunawa.net";
-		const title = "Nunawa Tech News";
-		const description = "海外テック記事の日本語サマリを配信するニュースサイト";
+    const siteUrl = "https://news.nunawa.net";
+    const title = "Nunawa Tech News";
+    const description = "海外テック記事の日本語サマリを配信するニュースサイト";
 
-		const rssItems = articles
-			.map((article) => {
-				const escapedTitle = escapeXml(article.title);
-				const escapedLink = escapeXml(article.link);
-				const homePage = new URL(article.link).origin;
-				const pubDate = article.publishDate.toISOString();
-				const escapedDescription = escapeXml(article.content);
+    const rssItems = articles
+      .map((article) => {
+        const escapedTitle = escapeXml(article.title);
+        const escapedLink = escapeXml(article.link);
+        const homePage = new URL(article.link).origin;
+        const pubDate = article.publishDate.toISOString();
+        const escapedDescription = escapeXml(article.content);
 
-				return `
+        return `
 					<entry>
 						<title>${escapedTitle}</title>
 						<link rel="alternate" href="${escapedLink}" />
@@ -54,15 +54,15 @@ export const GET: APIRoute = async () => {
 						<summary>${escapedDescription}</summary>
 			 			</entry>
 				`;
-			})
-			.join("\n");
+      })
+      .join("\n");
 
-		const latestPubDate =
-			articles.length > 0
-				? articles[0].publishDate.toISOString()
-				: new Date().toISOString();
+    const latestPubDate =
+      articles.length > 0
+        ? articles[0].publishDate.toISOString()
+        : new Date().toISOString();
 
-		const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
+    const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 			<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
 				<title>${escapeXml(title)}</title>
 				<subtitle>${escapeXml(description)}</subtitle>
@@ -74,13 +74,13 @@ export const GET: APIRoute = async () => {
 			</feed>
 		`;
 
-		return new Response(rssXml, {
-			headers: {
-				"Content-Type": "application/xml; charset=utf-8",
-			},
-		});
-	} catch (error) {
-		console.error("Failed to generate RSS feed:", error);
-		throw error;
-	}
+    return new Response(rssXml, {
+      headers: {
+        "Content-Type": "application/xml; charset=utf-8",
+      },
+    });
+  } catch (error) {
+    console.error("Failed to generate RSS feed:", error);
+    throw error;
+  }
 };

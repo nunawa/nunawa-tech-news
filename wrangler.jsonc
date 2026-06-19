@@ -2,6 +2,6 @@
   "name": "nunawa-tech-news",
   "compatibility_date": "2025-12-11",
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+  },
 }

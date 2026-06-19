@@ -69,7 +69,7 @@ const nextDeliveryDate = uploadedAt
 ---
 
 <Layout description="海外テック記事の日本語サマリを配信するニュースサイト">
-  <h1 class="text-3xl font-bold mb-8 text-neutral-300">
+  <h1 class="mb-8 text-3xl font-bold text-neutral-300">
     {
       uploadedAt
         ? formatDateJST(uploadedAt, true)
@@ -83,34 +83,34 @@ const nextDeliveryDate = uploadedAt
     ) : (
       <div class="space-y-6">
         {articles.map((article) => (
-          <article class="bg-neutral-900 border border-neutral-800 rounded-lg p-6 hover:border-neutral-700 transition-colors">
-            <h2 class="text-xl font-semibold mb-2">
+          <article class="rounded-lg border border-neutral-800 bg-neutral-900 p-6 transition-colors hover:border-neutral-700">
+            <h2 class="mb-2 text-xl font-semibold">
               <a
                 href={article.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded"
+                class="rounded text-blue-400 transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
               >
                 {article.title}
               </a>
             </h2>
 
-            <p class="text-neutral-500 mt-1 mb-2">{article.originalTitle}</p>
+            <p class="mt-1 mb-2 text-neutral-500">{article.originalTitle}</p>
 
-            <p class="text-sm text-neutral-500 mb-3">
+            <p class="mb-3 text-sm text-neutral-500">
               {`${extractDomain(article.link)} · `}
               <time datetime={article.publishDate.toISOString()}>
                 {formatDateJST(article.publishDate)}
               </time>
             </p>
 
-            <p class="text-neutral-300 leading-relaxed">{article.content}</p>
+            <p class="leading-relaxed text-neutral-300">{article.content}</p>
 
             <a
               href={article.link}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block mt-4 text-blue-400 hover:text-blue-300 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 rounded"
+              class="mt-4 inline-block rounded text-blue-400 transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
             >
               元記事を読む &#10697;
             </a>
