@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { fetchFeed } from "../lib/fetchFeed";
+import type { Article } from "../lib/schema";
 
-let uploadedAt: Date | undefined = undefined;
-let articles = [];
+let uploadedAt: Date | undefined;
+let articles: Article[];
 
 try {
   const feed = await fetchFeed();
@@ -21,7 +22,7 @@ try {
  * 日付をJST表示用にフォーマット
  */
 function formatDateJST(date: Date, dateOnly = false) {
-  let options: Intl.DateTimeFormatOptions = {};
+  let options: Intl.DateTimeFormatOptions;
   if (dateOnly) {
     options = {
       year: "numeric",
