@@ -27,6 +27,8 @@ For this project, we will use the saved JSON file to generate web pages and an R
 - Tailwind CSS
 - Zod
 - @aws-sdk/client-s3
+- Prettier
+- ESLint
 - Cloudflare Pages & R2
 
 ## Available Commands
@@ -36,6 +38,8 @@ npm install       # Install dependencies
 npm run dev       # Start a development server
 npm run build     # Build for production
 npm run preview   # Start a preview server with the build output
+npm run format    # Format all files with Prettier
+npm run lint      # Lint all files with ESLint
 ```
 
 ## Articles JSON Schema
