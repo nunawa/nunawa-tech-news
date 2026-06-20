@@ -7,19 +7,18 @@ import Layout from "../layouts/Layout.astro";
 
   <div class="space-y-6">
     <section
-      class="rounded-lg border border-neutral-800 bg-neutral-900 p-6 transition-colors hover:border-neutral-700"
+      class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700"
     >
-      <h2 class="mb-4 text-2xl font-semibold text-neutral-200">
-        サイトについて
-      </h2>
-      <div class="space-y-4 leading-relaxed text-neutral-300">
+      <div class="card-body">
+        <h2 class="card-title">サイトについて</h2>
+
         <p>
           このサイトは、海外のテクノロジー関連記事の日本語サマリを配信するニュースサイトです。
           ソフトウェアエンジニアにとって有益な記事をAIが自動で選定・翻訳・要約し、配信しています。
         </p>
 
-        <div>
-          <h3 class="mb-2 text-lg font-semibold text-neutral-200">仕組み</h3>
+        <div class="mt-2 space-y-2">
+          <h3 class="font-semibold">仕組み</h3>
           <ol class="ml-2 list-inside list-decimal space-y-2">
             <li>毎日、複数のRSSフィードから海外のテック記事を収集</li>
             <li>3日ごとに、AIが10記事を選定し日本語に翻訳・要約</li>
@@ -30,10 +29,11 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section
-      class="rounded-lg border border-neutral-800 bg-neutral-900 p-6 transition-colors hover:border-neutral-700"
+      class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700"
     >
-      <h2 class="mb-4 text-2xl font-semibold text-neutral-200">免責事項</h2>
-      <div class="space-y-3 leading-relaxed text-neutral-300">
+      <div class="card-body">
+        <h2 class="card-title">免責事項</h2>
+
         <p>
           本サイトで提供される記事の翻訳および要約は、LLM（大規模言語モデル）によって自動生成されています。LLMの性質上、完全な正確性を保証することはできません。
         </p>
@@ -50,20 +50,19 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <section
-      class="rounded-lg border border-neutral-800 bg-neutral-900 p-6 transition-colors hover:border-neutral-700"
+      class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700"
     >
-      <h2 class="mb-4 text-2xl font-semibold text-neutral-200">制作者</h2>
-      <div class="leading-relaxed text-neutral-300">
-        <p>
-          <a
-            href="https://www.nunawa.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded text-blue-400 transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
-          >
-            nunawa
-          </a>
-        </p>
+      <div class="card-body">
+        <h2 class="card-title">制作者</h2>
+
+        <a
+          href="https://www.nunawa.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-blue-400 transition-colors hover:text-blue-300"
+        >
+          nunawa
+        </a>
       </div>
     </section>
   </div>

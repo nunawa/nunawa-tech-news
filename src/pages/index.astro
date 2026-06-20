@@ -84,37 +84,41 @@ const nextDeliveryDate = uploadedAt
     ) : (
       <div class="space-y-6">
         {articles.map((article) => (
-          <article class="rounded-lg border border-neutral-800 bg-neutral-900 p-6 transition-colors hover:border-neutral-700">
-            <h2 class="mb-2 text-xl font-semibold">
-              <a
-                href={article.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="rounded text-blue-400 transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
-              >
-                {article.title}
-              </a>
-            </h2>
+          <article class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700">
+            <div class="card-body">
+              <h2 class="card-title">
+                <a
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-400 transition-colors hover:text-blue-300"
+                >
+                  {article.title}
+                </a>
+              </h2>
 
-            <p class="mt-1 mb-2 text-neutral-500">{article.originalTitle}</p>
+              <p class="text-neutral-500">{article.originalTitle}</p>
 
-            <p class="mb-3 text-sm text-neutral-500">
-              {`${extractDomain(article.link)} · `}
-              <time datetime={article.publishDate.toISOString()}>
-                {formatDateJST(article.publishDate)}
-              </time>
-            </p>
+              <p class="text-sm text-neutral-500">
+                {`${extractDomain(article.link)} · `}
+                <time datetime={article.publishDate.toISOString()}>
+                  {formatDateJST(article.publishDate)}
+                </time>
+              </p>
 
-            <p class="leading-relaxed text-neutral-300">{article.content}</p>
+              <p class="mt-1">{article.content}</p>
 
-            <a
-              href={article.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-4 inline-block rounded text-blue-400 transition-colors hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-neutral-900 focus:outline-none"
-            >
-              元記事を読む &#10697;
-            </a>
+              <div class="card-actions mt-2">
+                <a
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-400 transition-colors hover:text-blue-300"
+                >
+                  元記事を読む &#10697;
+                </a>
+              </div>
+            </div>
           </article>
         ))}
       </div>
