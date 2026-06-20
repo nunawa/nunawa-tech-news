@@ -25,6 +25,7 @@ For this project, we will use the saved JSON file to generate web pages and an R
 - Typescript
 - Astro
 - Tailwind CSS
+- daisyUI
 - Zod
 - @aws-sdk/client-s3
 - Prettier
