@@ -20,7 +20,7 @@ For this project, we will use the saved JSON file to generate web pages and an R
     └── styles
 ```
 
-## Teck Stack
+## Tech Stack
 
 - Typescript
 - Astro
