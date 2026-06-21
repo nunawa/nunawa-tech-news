@@ -1,4 +1,5 @@
 ---
+import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 import { fetchFeed } from "../lib/fetchFeed";
 import type { Article } from "../lib/schema";
@@ -87,14 +88,7 @@ const nextDeliveryDate = uploadedAt
           <article class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700">
             <div class="card-body">
               <h2 class="card-title">
-                <a
-                  href={article.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-blue-400 transition-colors hover:text-blue-300"
-                >
-                  {article.title}
-                </a>
+                <Link href={article.link}>{article.title}</Link>
               </h2>
 
               <p class="text-neutral-500">{article.originalTitle}</p>
@@ -109,14 +103,7 @@ const nextDeliveryDate = uploadedAt
               <p class="mt-1">{article.content}</p>
 
               <div class="card-actions mt-2">
-                <a
-                  href={article.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-blue-400 transition-colors hover:text-blue-300"
-                >
-                  元記事を読む &#10697;
-                </a>
+                <Link href={article.link}>元記事を読む &#10697;</Link>
               </div>
             </div>
           </article>
