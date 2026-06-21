@@ -37,7 +37,7 @@ For this project, we will use the saved JSON file to generate web pages and an R
 ```bash
 npm install       # Install dependencies
 npm run dev       # Start a development server
-npm run build     # Build for production
+npm run build     # Check types and build for production
 npm run preview   # Start a preview server with the build output
 npm run format    # Format all files with Prettier
 npm run lint      # Lint all files with ESLint

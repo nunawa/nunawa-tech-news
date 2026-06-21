@@ -7,7 +7,6 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://news.nunawa.net",
   vite: {
-    // @ts-expect-error
     plugins: [tailwindcss()],
   },
   output: "static",
