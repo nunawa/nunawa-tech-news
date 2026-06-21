@@ -1,4 +1,5 @@
 ---
+import Card from "../components/Card.astro";
 import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -7,57 +8,45 @@ import Layout from "../layouts/Layout.astro";
   <h1 class="mb-8 text-3xl font-bold text-neutral-300">About</h1>
 
   <div class="space-y-6">
-    <section
-      class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700"
-    >
-      <div class="card-body">
-        <h2 class="card-title">サイトについて</h2>
+    <Card as="section">
+      <h2 class="card-title">サイトについて</h2>
 
-        <p>
-          このサイトは、海外のテクノロジー関連記事の日本語サマリを配信するニュースサイトです。
-          ソフトウェアエンジニアにとって有益な記事をAIが自動で選定・翻訳・要約し、配信しています。
-        </p>
+      <p>
+        このサイトは、海外のテクノロジー関連記事の日本語サマリを配信するニュースサイトです。
+        ソフトウェアエンジニアにとって有益な記事をAIが自動で選定・翻訳・要約し、配信しています。
+      </p>
 
-        <div class="mt-2 space-y-2">
-          <h3 class="font-semibold">仕組み</h3>
-          <ol class="ml-2 list-inside list-decimal space-y-2">
-            <li>毎日、複数のRSSフィードから海外のテック記事を収集</li>
-            <li>3日ごとに、AIが10記事を選定し日本語に翻訳・要約</li>
-            <li>静的サイトとして生成し、Cloudflare Pagesで配信</li>
-          </ol>
-        </div>
+      <div class="mt-2 space-y-2">
+        <h3 class="font-semibold">仕組み</h3>
+        <ol class="ml-2 list-inside list-decimal space-y-2">
+          <li>毎日、複数のRSSフィードから海外のテック記事を収集</li>
+          <li>3日ごとに、AIが10記事を選定し日本語に翻訳・要約</li>
+          <li>静的サイトとして生成し、Cloudflare Pagesで配信</li>
+        </ol>
       </div>
-    </section>
+    </Card>
 
-    <section
-      class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700"
-    >
-      <div class="card-body">
-        <h2 class="card-title">免責事項</h2>
+    <Card as="section">
+      <h2 class="card-title">免責事項</h2>
 
-        <p>
-          本サイトで提供される記事の翻訳および要約は、LLM（大規模言語モデル）によって自動生成されています。LLMの性質上、完全な正確性を保証することはできません。
-        </p>
-        <p>
-          記事の内容について詳細を確認したい場合や、正確な情報が必要な場合は、必ず元記事をご参照ください。
-        </p>
-        <p>
-          リンク先の外部サイトの内容については、各サイトの運営者が責任を負うものとし、本サイトは一切の責任を負いません。
-        </p>
-        <p>
-          本サービスの継続性や可用性について保証するものではありません。予告なくサービスを変更または終了する場合があります。
-        </p>
-      </div>
-    </section>
+      <p>
+        本サイトで提供される記事の翻訳および要約は、LLM（大規模言語モデル）によって自動生成されています。LLMの性質上、完全な正確性を保証することはできません。
+      </p>
+      <p>
+        記事の内容について詳細を確認したい場合や、正確な情報が必要な場合は、必ず元記事をご参照ください。
+      </p>
+      <p>
+        リンク先の外部サイトの内容については、各サイトの運営者が責任を負うものとし、本サイトは一切の責任を負いません。
+      </p>
+      <p>
+        本サービスの継続性や可用性について保証するものではありません。予告なくサービスを変更または終了する場合があります。
+      </p>
+    </Card>
 
-    <section
-      class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700"
-    >
-      <div class="card-body">
-        <h2 class="card-title">制作者</h2>
+    <Card as="section">
+      <h2 class="card-title">制作者</h2>
 
-        <Link href="https://www.nunawa.net/">nunawa</Link>
-      </div>
-    </section>
+      <Link href="https://www.nunawa.net/">nunawa</Link>
+    </Card>
   </div>
 </Layout>

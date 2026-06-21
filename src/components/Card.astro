@@ -1,0 +1,30 @@
+---
+type Props = {
+  as: "section" | "article";
+};
+
+const { as } = Astro.props as Props;
+---
+
+{
+  () => {
+    switch (as) {
+      case "section":
+        return (
+          <section class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700">
+            <div class="card-body">
+              <slot />
+            </div>
+          </section>
+        );
+      case "article":
+        return (
+          <article class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700">
+            <div class="card-body">
+              <slot />
+            </div>
+          </article>
+        );
+    }
+  }
+}

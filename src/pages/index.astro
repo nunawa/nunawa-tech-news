@@ -1,4 +1,5 @@
 ---
+import Card from "../components/Card.astro";
 import Link from "../components/Link.astro";
 import Layout from "../layouts/Layout.astro";
 import { fetchFeed } from "../lib/fetchFeed";
@@ -85,28 +86,26 @@ const nextDeliveryDate = uploadedAt
     ) : (
       <div class="space-y-6">
         {articles.map((article) => (
-          <article class="card card-lg card-border bg-base-300 transition-colors hover:border-neutral-700">
-            <div class="card-body">
-              <h2 class="card-title">
-                <Link href={article.link}>{article.title}</Link>
-              </h2>
+          <Card as="article">
+            <h2 class="card-title">
+              <Link href={article.link}>{article.title}</Link>
+            </h2>
 
-              <p class="text-neutral-500">{article.originalTitle}</p>
+            <p class="text-neutral-500">{article.originalTitle}</p>
 
-              <p class="text-sm text-neutral-500">
-                {`${extractDomain(article.link)} · `}
-                <time datetime={article.publishDate.toISOString()}>
-                  {formatDateJST(article.publishDate)}
-                </time>
-              </p>
+            <p class="text-sm text-neutral-500">
+              {`${extractDomain(article.link)} · `}
+              <time datetime={article.publishDate.toISOString()}>
+                {formatDateJST(article.publishDate)}
+              </time>
+            </p>
 
-              <p class="mt-1">{article.content}</p>
+            <p class="mt-1">{article.content}</p>
 
-              <div class="card-actions mt-2">
-                <Link href={article.link}>元記事を読む &#10697;</Link>
-              </div>
+            <div class="card-actions mt-2">
+              <Link href={article.link}>元記事を読む &#10697;</Link>
             </div>
-          </article>
+          </Card>
         ))}
       </div>
     )
